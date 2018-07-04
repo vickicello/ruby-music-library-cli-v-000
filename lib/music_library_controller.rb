@@ -109,6 +109,7 @@ class MusicLibraryController
         selected_genre = Genre.find_by_name(input)
         
         self.update_song_list
+        @song_list.sort_by! { |obj| obj.name }
         song_list = []
         @song_list.each do |s|
           song_list << s if s.genre.name == input
