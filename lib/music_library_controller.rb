@@ -107,6 +107,7 @@ class MusicLibraryController
       input = gets.strip
       if Genre.find_by_name(input)
         selected_genre = Genre.find_by_name(input)
+        
         self.update_song_list
         song_list = []
         @song_list.each do |s|
